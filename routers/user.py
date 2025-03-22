@@ -16,7 +16,6 @@ def get_user_endpoint(user_id: str):
         raise HTTPException(status_code=400, detail=user["error"])
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
-    user["created_at"] = user["created_at"].isoformat()
     return user
 
 
